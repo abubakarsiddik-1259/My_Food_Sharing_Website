@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+ @plugin "daisyui" {
+  themes: light --default;
+ }
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: blue;
+  --color-secondary: teal;
+}
+
+
+
+
+.logout-btn{
+  @apply bg-gradient-to-r from-purple-400 to-purple-700
+  text-white font-medium
+  px-5 py-2
+  rounded-lg
+  transition duration-300
+  hover:from-purple-600 hover:to-pink-600
+  active:scale-95;
+}
+
+
+
+
+
+
+
