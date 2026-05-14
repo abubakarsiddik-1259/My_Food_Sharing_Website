@@ -68,7 +68,7 @@ const Navbar = () => {
             Sing Out
           </Link>
         ) : (
-          <Link to="/register" className="btn">
+          <Link to="/signin" className="btn">
             Login
           </Link>
         )}

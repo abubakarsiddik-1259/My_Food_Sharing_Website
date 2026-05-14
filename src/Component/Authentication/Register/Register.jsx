@@ -7,6 +7,7 @@ import { IoEyeOff } from "react-icons/io5";
 import { toast } from "react-toastify";
 import { use, useState } from "react";
 import { AuthContext } from "../../../MainComponent/Context/AuthContext";
+import { Link } from "react-router";
 
 const Register = () => {
   const { registerFun, setLoading, updateProfileFunction, signinWithGoogle } =
@@ -272,9 +273,9 @@ const Register = () => {
 
               <p className="text-center text-sm text-gray-500 mt-4">
                 Already have an account?
-                <span className="text-green-600 font-bold cursor-pointer hover:underline ml-1">
+                <Link to='/signin' className="text-green-600 font-bold cursor-pointer hover:underline ml-1">
                   Login
-                </span>
+                </Link>
               </p>
             </form>
           </div>
