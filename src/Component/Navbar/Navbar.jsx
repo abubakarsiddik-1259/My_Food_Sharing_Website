@@ -64,11 +64,11 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {user ? (
-          <Link onClick={handleSignOut} className="btn">
+          <Link onClick={handleSignOut} className="btn btn-btns">
             Sing Out
           </Link>
         ) : (
-          <Link to="/signin" className="btn">
+          <Link to="/signin" className="btn btn-btns">
             Login
           </Link>
         )}
