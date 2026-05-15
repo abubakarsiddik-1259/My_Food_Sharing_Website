@@ -20,7 +20,7 @@ const LatestFoods = ({ latestFoodsPromice }) => {
       </div>
 
       <div className="text-center my-12">
-        <Link to="/available-foods" className="btn-btns">
+        <Link to="/availablefoods" className="btn-btns">
           Show All Foods
         </Link>
       </div>

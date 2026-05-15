@@ -3,6 +3,7 @@ import Layout from "../Layout/Layout";
 import Home from "../../Component/HomePage/Home/Home";
 import Register from "../../Component/Authentication/Register/Register";
 import Signin from "../../Component/Authentication/Signin/Signin";
+import AvailableFoods from "../../Component/AvailableFoods/AvailableFoods";
 
 export const router = createBrowserRouter([
   {
@@ -14,12 +15,17 @@ export const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path:"/register",
+        path: "/register",
         Component: Register,
       },
       {
-        path:"/signin",
+        path: "/signin",
         Component: Signin,
+      },
+      {
+        path: "/availablefoods",
+        Component: AvailableFoods,
+        loader: () => fetch(`http://localhost:5000/foods`),
       },
     ],
   },
