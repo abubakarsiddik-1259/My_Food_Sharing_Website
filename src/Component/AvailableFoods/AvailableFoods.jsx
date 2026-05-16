@@ -16,7 +16,7 @@ const AvailableFoods = () => {
           </span>
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 space-y-15  md">
           {data.map((food) => (
             <FoodCart key={food._id} food={food}></FoodCart>
           ))}

@@ -3,6 +3,8 @@ import logo from "../../assets/logo.png";
 import { Link } from "react-router";
 import { use } from "react";
 import { AuthContext } from "../../MainComponent/Context/AuthContext";
+import { IoAddCircleOutline, IoLogOutOutline } from "react-icons/io5";
+
 const Navbar = () => {
   const { user, singnOutUser } = use(AuthContext);
 
@@ -67,9 +69,38 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {user ? (
-          <Link onClick={handleSignOut} className="btn btn-btns">
-            Sing Out
-          </Link>
+          <div className="flex gap-4 items-stretch it">
+            <div className="dropdown dropdown-end">
+              <div tabIndex={0} role="button" className=" ">
+                <img
+                  src={user?.photoURL}
+                  className="h-10 w-10 rounded-full"
+                  alt=""
+                />
+              </div>
+              <ul
+                tabIndex="-1"
+                className="menu dropdown-content bg-base-200 rounded-box z-1 mt-4 w-52 p-2 shadow-sm"
+              >
+                <li>
+                  <a>Item 1</a>
+                </li>
+                <Link to="/add-food" className="btn btn-blue">
+                  {" "}
+                  <IoAddCircleOutline className="text-xl" />
+                  Add Food
+                </Link>
+
+                <Link
+                  onClick={handleSignOut}
+                  className="btn btn-btns rounded-field"
+                >
+                  <IoLogOutOutline className="text-xl" />
+                  Log Out
+                </Link>
+              </ul>
+            </div>
+          </div>
         ) : (
           <Link to="/signin" className="btn btn-btns">
             Login

@@ -5,6 +5,9 @@ import Register from "../../Component/Authentication/Register/Register";
 import Signin from "../../Component/Authentication/Signin/Signin";
 import AvailableFoods from "../../Component/AvailableFoods/AvailableFoods";
 
+import PrivateRouter from "../PrivateRoute/PrivateRoute";
+import AddFoods from "../../Component/AddFood/AddFoods";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +29,14 @@ export const router = createBrowserRouter([
         path: "/availablefoods",
         Component: AvailableFoods,
         loader: () => fetch(`http://localhost:5000/foods`),
+      },
+      {
+        path: "/add-food",
+        element: (
+          <PrivateRouter>
+            <AddFoods />
+          </PrivateRouter>
+        ),
       },
     ],
   },
